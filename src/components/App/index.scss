@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.app {
+  font-family: $font-family-gilroy;
+  max-width: 576px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: $color-purple-dark;
+
+  &__bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background-image: linear-gradient(0deg, $color-purple-dark, transparent),
+      url(../../shared/images/bg_image.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    opacity: 0.1;
+  }
+
+  &__wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+}
