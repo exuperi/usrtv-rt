@@ -1,11 +1,124 @@
+@import '../../styles/variables.scss';
+
 .player {
-    flex-grow: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &__slider {
+    width: 100%;
+    height: $base * 45;
+  }
+
+  &__title {
+    color: $color-white;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+  }
 
-    &__slider {
-        width: 100px;
-        height: 100px;
+  &__artist {
+    font-weight: normal;
+    font-size: $font-size-xs;
+    line-height: $line-height-sm;
+    color: $color-purple-extra-light;
+  }
+
+  &__playback-name {
+    font-weight: bold;
+    font-size: $font-size-lg;
+    line-height: $line-height-sm;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+
+    &-btn:nth-of-type(1) {
+      background-image: url(../../shared/images/shuffle_ico.svg);
     }
+
+    &-btn:nth-of-type(2) {
+      background-image: url(../../shared/images/previous_ico.svg);
+    }
+
+    &-btn:nth-of-type(3) {
+      background-image: url(../../shared/images/Play_inactive.png);
+      width: $base * 25;
+      height: $base * 25;
+      background-size: 110% 120%;
+    }
+
+    &-btn:nth-of-type(4) {
+      background-image: url(../../shared/images/next_ico.svg);
+    }
+
+    &-btn:nth-of-type(5) {
+      background-image: url(../../shared/images/repeat_ico.svg);
+    }
+
+    &-btn {
+      width: $font-size-md;
+      height: $font-size-md;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &__playback-buffers {
+    width: 100%;
+  }
+
+  &__buffer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: $color-purple-extra-light;
+    font-size: $font-size-xs;
+    line-height: $line-height-sm;
+    padding: 0 $base * 8;
+
+    .track {
+      flex-grow: 1;
+      height: 1px;
+      background-color: $color-green;
+      margin: 0 $base * 3;
+      position: relative;
+
+      &-wide {
+        height: 4px;
+        width: 50%;
+        border-radius: 0 2px 2px 0;
+        box-shadow: inset 0px 0px 2px 0px black;
+        background-color: inherit;
+        position: absolute;
+        top: -1.5px;
+        left: 0;
+      }
+    }
+  }
+
+  &__waveform {
+    &-outer {
+      width: 50%;
+      height: 40px;
+    }
+
+    &-track {
+      background-image: url(../../shared/images/waveform.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
 }

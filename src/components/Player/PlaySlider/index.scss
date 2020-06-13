@@ -1,12 +1,66 @@
-.play-slider {
-	&__element {
-		width: 100px;
-		height: 100px;
-		border-radius: 50%;
+@import '../../../styles/variables.scss';
 
-		img {
-			width: 100%;
-			height: 100%;
+.play-slider {
+	display: flex;
+	align-items: center;
+
+	&__element {
+		height: $base * 15;
+		width: $base * 15;
+		border-radius: 50%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		transition: all .3s linear;
+		position: relative;
+
+		&-1 {
+			background-image: url(../../../shared/images/unreleased_cover.png);
+		}
+
+		&-2 {
+			background-image: url(../../../shared/images/cover-1.png);
+		}
+
+		&-3 {
+			background-image: url(../../../shared/images/cover.png);
+		}
+
+		&:focus {
+			outline: none;
 		}
 	}
+
+	&__logo {
+		position: absolute;
+		height: 0;
+		width: 0;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: $color-purple-dark;
+		border: 0 solid $color-purple-light;
+		border-radius: 50%;
+		background-image: url(../../../shared/images/usertive_logo.svg);
+		background-repeat: no-repeat;
+		background-size: 20px 20px;
+		background-position: center;
+		transition: all .3s linear;
+	}
+}
+
+.slick-center>div>div {
+	height: $base * 45;
+	width: $base * 45;
+
+	.play-slider__logo {
+		height: 50px;
+		width: 50px;
+		border-width: 3px;
+	}
+}
+
+.slick-track {
+	display: flex;
+	align-items: center;
 }
